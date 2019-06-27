@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-//@EnableAutoConfiguration(exclude = [SecurityAutoConfiguration::class])
 class TicketApplication
 
 fun main(args: Array<String>) {
