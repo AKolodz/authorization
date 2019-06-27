@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@Profile("default")
 @RequestMapping("/greet")
 class GreetingController {
 
@@ -17,10 +16,10 @@ class GreetingController {
 
 @Profile("dev")
 @RestController
-@RequestMapping("/devgreet")
+@RequestMapping("/greet/dev")
 class GreetingDevController {
 
     @RequestMapping("","/{person}")
     fun greetPerson(@PathVariable(name = "person", required = false) person : String?)=
-            "Hello ${person?:"PlayerUnknown"}"
+            "Hello in DEV server, ${person?:"PlayerUnknown"}"
 }
