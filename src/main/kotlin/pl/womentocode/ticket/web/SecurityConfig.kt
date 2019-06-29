@@ -20,7 +20,7 @@ class SecurityConfig : WebSecurityConfigurerAdapter(){
     private lateinit var dataSource : DataSource
 
     override fun configure(auth: AuthenticationManagerBuilder) {
-        val userDataQueryPattern = "SELECT email,passwordHash,active FROM users WHERE email=?"
+        val userDataQueryPattern = "SELECT email,password_hash,active FROM users WHERE email=?"
         val authoritiesQueryPattern = "SELECT ' ','ADMIN' FROM users WHERE email=?" //should be *->ADMIN probably but SQL exception
         auth.jdbcAuthentication()
                 .dataSource(dataSource)
