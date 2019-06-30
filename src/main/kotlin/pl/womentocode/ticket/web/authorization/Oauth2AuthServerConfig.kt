@@ -18,8 +18,8 @@ class Oauth2AuthServerConfig : AuthorizationServerConfigurerAdapter() {
 
     @Autowired
     private lateinit var tokenStore: TokenStore
-//    @Autowired
-//    lateinit var authenticationManager: AuthenticationManager
+    @Autowired
+    lateinit var authenticationManager: AuthenticationManager
 
     override fun configure(authConfigurer: AuthorizationServerSecurityConfigurer) {
         authConfigurer
@@ -43,6 +43,6 @@ class Oauth2AuthServerConfig : AuthorizationServerConfigurerAdapter() {
     override fun configure(endpoints: AuthorizationServerEndpointsConfigurer) {
         endpoints
                 .tokenStore(tokenStore)
-//                .authenticationManager(authenticationManager)
+                .authenticationManager(authenticationManager)
     }
 }
