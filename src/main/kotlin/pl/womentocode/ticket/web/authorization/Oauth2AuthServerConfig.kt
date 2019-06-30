@@ -10,8 +10,6 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.provider.token.TokenStore
 import org.springframework.security.authentication.AuthenticationManager
 
-
-
 @Configuration
 @EnableAuthorizationServer
 class Oauth2AuthServerConfig : AuthorizationServerConfigurerAdapter() {
