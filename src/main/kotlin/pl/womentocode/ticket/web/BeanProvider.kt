@@ -8,8 +8,6 @@ import javax.sql.DataSource
 @Configuration
 class BeanProvider {
     
-    @Bean
-    fun provideTokenStore(dataSource: DataSource) =
-            JdbcTokenStore(dataSource)
+
 
 }
