@@ -19,24 +19,24 @@ class Oauth2AuthServerConfig : AuthorizationServerConfigurerAdapter() {
     @Autowired
     lateinit var authenticationManager: AuthenticationManager
 
-    override fun configure(authConfigurer: AuthorizationServerSecurityConfigurer) {
-        authConfigurer
-                .tokenKeyAccess("permitAll()")
-                .checkTokenAccess("isAuthenticated()")
-    }
+//    override fun configure(authConfigurer: AuthorizationServerSecurityConfigurer) {
+//        authConfigurer
+//                .tokenKeyAccess("permitAll()")
+//                .checkTokenAccess("isAuthenticated()")
+//    }
 
-    override fun configure(clients: ClientDetailsServiceConfigurer) {
-        clients.inMemory()
-                .withClient("frontendClientId")
-                .secret("{noop}frontendClientSecret")
-                .authorizedGrantTypes(
-                        "password",
-                        "authorization_code",
-                        "refresh_token")
-                .refreshTokenValiditySeconds(24 * 60 * 60 * 28)
-                .accessTokenValiditySeconds(3600)
-                .scopes("read")
-    }
+//    override fun configure(clients: ClientDetailsServiceConfigurer) {
+//        clients.inMemory()
+//                .withClient("frontendClientId")
+//                .secret("{noop}frontendClientSecret")
+//                .authorizedGrantTypes(
+//                        "password",
+//                        "authorization_code",
+//                        "refresh_token")
+//                .refreshTokenValiditySeconds(24 * 60 * 60 * 28)
+//                .accessTokenValiditySeconds(3600)
+//                .scopes("read")
+//    }
 
     override fun configure(endpoints: AuthorizationServerEndpointsConfigurer) {
         endpoints
