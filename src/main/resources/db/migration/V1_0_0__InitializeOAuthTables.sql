@@ -48,3 +48,16 @@ CREATE TABLE IF NOT EXISTS oauth_approvals (
 	expiresAt TIMESTAMP,
 	lastModifiedAt TIMESTAMP
 );
+
+CREATE TABLE IF NOT EXISTS authority (
+	name varchar(256)
+);
+
+CREATE TABLE IF NOT EXISTS user (
+    account_expired BOOLEAN,
+    account_locked BOOLEAN,
+    credentials_expired BOOLEAN,
+    enabled BOOLEAN,
+    password VARCHAR(256),
+    user_name VARCHAR(256)
+);
